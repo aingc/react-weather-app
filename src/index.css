@@ -12,11 +12,12 @@ body {
   background-image: url('./assets/cold-bg.jpg');
   background-size: cover;
   background-position: bottom;
-  transition: 0.4 ease-out;
+  transition: 0.4s ease;
 }
 
 .app.warm {
   background-image: url('./assets/warm-bg.jpg');
+  transition: 0.4s ease;
 }
 
 main {
@@ -84,7 +85,7 @@ main {
   border-radius: 16px;
   padding: 15px 25px;
   color: #fff;
-  font-size: 102px;
+  font-size: 85px;
   font-weight: 900;
   text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
   text-align: center;
