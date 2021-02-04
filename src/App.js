@@ -9,15 +9,25 @@ function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
 
+  const handleErrors = (response) => {
+    if (!response.ok) {
+      setQuery('');
+      throw Error(response.statusText);
+    }
+    return response;
+  };
+
   const search = (e) => {
     if (e.key === 'Enter') {
       fetch(`${api.base}weather?q=${query}&units=metric&appid=${api.key}`)
+        .then(handleErrors)
         .then((res) => res.json())
         .then((result) => {
           setWeather(result);
           setQuery('');
           console.log(result);
-        });
+        })
+        .catch((err) => console.log(err));
     }
   };
 
